@@ -79,13 +79,13 @@
         
         <header class="text-center mb-6">
             <h1 class="text-2xl font-black leading-tight uppercase mb-4 px-2">
-                O GRANDE <span class="text-emerald text-3xl block italic text-center text-emerald">GOLPE DO SCORE:</span>
+                O GRANDE <span class="text-emerald text-3xl block italic text-center">GOLPE DO SCORE:</span>
                 <span class="text-lg text-white">Porque ser um bom pagador só te afasta de cartões premium</span>
             </h1>
         </header>
 
         <!-- VSL COM ATIVADOR DE SOM -->
-        <div class="vsl-container mb-8 shadow-2xl shadow-emerald/20">
+        <div class="vsl-container mb-8 shadow-2xl shadow-emerald/20 border-emerald">
             <div id="unmute-overlay" onclick="enableSound()">
                 <div class="text-5xl mb-4 animate-bounce">🔊</div>
                 <p class="text-white font-black text-lg uppercase mt-2 text-center px-4 leading-tight">
@@ -109,7 +109,7 @@
         </a>
         
         <!-- CONTADOR DINÂMICO -->
-        <p class="text-center text-[10px] text-gray-500 mb-12 font-bold uppercase italic text-center">
+        <p class="text-center text-[10px] text-gray-500 mb-12 font-bold uppercase italic">
             🔥 <span id="viewer-count" class="text-emerald">147</span> pessoas estão assistindo agora
         </p>
 
@@ -125,6 +125,7 @@
                     <h4 class="font-black text-lg mb-1 uppercase tracking-tighter leading-none text-white italic">Fim dos 18 Mitos</h4>
                     <p class="text-gray-400 text-xs italic leading-relaxed">Destrua as mentiras sobre o Serasa e aprenda o que realmente importa para ter limites altos.</p>
                 </div>
+                <!-- Módulo 3 (Branco e Realista) -->
                 <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl text-left">
                     <h4 class="font-black text-lg mb-1 uppercase tracking-tighter leading-none text-white italic">Plano de Ativação Prático</h4>
                     <p class="text-gray-400 text-xs italic leading-relaxed text-left">O guia para organizar seu CPF e seguir o cronograma necessário para a melhora da sua pontuação bancária.</p>
@@ -135,14 +136,14 @@
         <!-- SEÇÃO BÔNUS PREMIUM -->
         <section class="mb-20">
             <div class="text-center mb-10">
-                <span class="bg-emerald/10 text-emerald text-[10px] font-black px-4 py-2 rounded-full border border-emerald/30 uppercase tracking-widest leading-none">Presentes Exclusivos</span>
+                <span class="bg-emerald/10 text-emerald text-[10px] font-black px-4 py-2 rounded-full border border-emerald/30 uppercase tracking-widest leading-none text-center">Presentes Exclusivos</span>
                 <h2 class="text-3xl font-black mt-4 uppercase italic text-center">Ganhando HOJE:</h2>
             </div>
             
             <div class="space-y-8">
                 <!-- Bônus 1 -->
                 <div class="bonus-card p-6 rounded-[32px] shadow-2xl shadow-emerald/5">
-                    <div class="bonus-badge italic">Grátis Hoje</div>
+                    <div class="bonus-badge italic italic">Grátis Hoje</div>
                     <div class="flex gap-4 items-start text-left">
                         <div class="bonus-icon-bg w-14 h-14 rounded-2xl flex items-center justify-center text-3xl">📄</div>
                         <div class="flex-1">
@@ -157,8 +158,8 @@
                 </div>
 
                 <!-- Bônus 2 -->
-                <div class="bonus-card p-6 rounded-[32px] shadow-2xl shadow-emerald/5 text-left">
-                    <div class="bonus-badge italic">Grátis Hoje</div>
+                <div class="bonus-card p-6 rounded-[32px] shadow-2xl shadow-emerald/5 text-left text-left">
+                    <div class="bonus-badge italic italic">Grátis Hoje</div>
                     <div class="flex gap-4 items-start">
                         <div class="bonus-icon-bg w-14 h-14 rounded-2xl flex items-center justify-center text-3xl">🚗</div>
                         <div class="flex-1">
@@ -174,7 +175,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO PREÇO R$ 47 COM GARANTIA INTERNA -->
+        <!-- SEÇÃO PREÇO R$ 47 COM O SEU SELO DOURADO -->
         <section id="preco" class="text-center mb-16 bg-card py-14 rounded-[48px] border-2 border-emerald/30 relative text-center">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black font-black text-[9px] px-6 py-2 rounded-full uppercase italic leading-none">Oferta por Tempo Limitado</div>
             <div class="mb-6">
@@ -187,43 +188,51 @@
                 QUERO MEU ACESSO
             </a>
             
-            <div class="mt-8 opacity-40 grayscale flex justify-center gap-4">
+            <div class="mt-8 opacity-40 grayscale flex justify-center gap-4 items-center">
                 <img src="https://img.icons8.com/color/48/visa.png" width="30">
                 <img src="https://img.icons8.com/color/48/mastercard.png" width="30">
                 <img src="https://img.icons8.com/color/48/pix.png" width="30">
             </div>
 
-            <!-- GARANTIA DENTRO DO CARD -->
-            <div class="mt-4 flex items-center justify-center gap-2">
-                <img src="https://i.ibb.co/L9H8qfM/selo-garantia.png" width="35" alt="Garantia">
-                <span class="text-[10px] font-black uppercase text-gray-400">Garantia Blindada de 7 Dias</span>
+            <!-- GARANTIA DENTRO DO CARD COM O SELO DOURADO -->
+            <div class="mt-6 flex flex-col items-center justify-center">
+                <!-- ABAIXO É O LINK DO SEU NOVO SELO -->
+                <img src="https://i.ibb.co/X3p7X1s/selo-7-dias-gold.png" width="100" alt="Garantia 7 Dias" class="mb-2">
+                <span class="text-[10px] font-black uppercase text-gray-400 tracking-widest">Garantia Blindada de 7 Dias</span>
             </div>
 
             <p class="mt-6 text-[10px] text-yellow-500 font-bold uppercase animate-pulse italic leading-none">⚠️ Atenção: Restam apenas 7 cópias neste valor!</p>
         </section>
 
         <!-- FAQ -->
-        <section class="mb-20 px-2 text-left text-left">
-            <h2 class="text-2xl font-black text-center mb-8 uppercase italic">Dúvidas Frequentes:</h2>
+        <section class="mb-20 px-2 text-left">
+            <h2 class="text-2xl font-black text-center mb-8 uppercase italic text-center">Dúvidas Frequentes:</h2>
             <div class="space-y-3">
                 <details class="bg-card rounded-2xl p-6 group border border-white/5">
                     <summary class="font-bold text-sm list-none flex justify-between items-center cursor-pointer">
                         Vou receber os bônus agora?
                         <span class="text-emerald group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="text-[11px] text-gray-400 mt-3 italic leading-relaxed text-left">Sim! Tudo é liberado no seu e-mail imediatamente após a aprovação do pagamento.</p>
+                    <p class="text-[11px] text-gray-400 mt-3 italic leading-relaxed text-left text-left">Sim! Tudo é liberado no seu e-mail imediatamente após a aprovação do pagamento.</p>
                 </details>
                 <details class="bg-card rounded-2xl p-6 group border border-emerald/10 shadow-lg">
                     <summary class="font-bold text-sm list-none flex justify-between items-center cursor-pointer text-emerald uppercase">
                         Tem Garantia?
                         <span class="text-emerald group-open:rotate-180 transition-transform text-white">▼</span>
                     </summary>
-                    <p class="text-[11px] text-gray-400 mt-3 italic leading-relaxed font-bold text-left">Risco Zero: Se em 7 dias você não estiver satisfeito, devolvemos seu dinheiro na hora via PIX.</p>
+                    <p class="text-[11px] text-gray-400 mt-3 italic leading-relaxed font-bold text-left text-left text-left">Risco Zero: Se em 7 dias você não estiver satisfeito, devolvemos seu dinheiro na hora via PIX.</p>
                 </details>
             </div>
         </section>
 
-        <footer class="text-[8px] text-gray-700 text-center leading-tight space-y-4 pb-12 opacity-60 italic text-center">
+        <!-- GARANTIA FINAL COM O SELO DOURADO -->
+        <section class="text-center mb-20 px-6 bg-white/5 py-12 rounded-[40px] border border-white/5 text-center">
+            <img src="https://i.ibb.co/X3p7X1s/selo-7-dias-gold.png" class="mx-auto mb-6" width="130">
+            <h3 class="font-black uppercase mb-3 text-lg italic italic leading-none text-center">Garantia de Satisfação</h3>
+            <p class="text-gray-500 text-[10px] leading-relaxed uppercase font-bold max-w-xs mx-auto italic leading-tight text-center">Você tem 7 dias para testar tudo. Se o seu score não aumentar ou você não gostar, eu devolvo o seu dinheiro.</p>
+        </section>
+
+        <footer class="text-[8px] text-gray-700 text-center leading-tight space-y-4 pb-12 opacity-60 italic text-center text-center">
             <p>Este site não é afiliado ao Facebook, Google ou Serasa. Todos os direitos reservados.</p>
             <p>© 2026 Código do Crédito Oficial</p>
         </footer>
@@ -252,5 +261,6 @@
 
 </body>
 </html>
+
                     
                     
