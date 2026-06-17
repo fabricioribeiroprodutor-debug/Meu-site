@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Código do Crédito | Oficial 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Script essencial do Vimeo para controlar o som -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
@@ -12,15 +14,14 @@
         .text-emerald { color: #10b981; }
         .bg-emerald { background-color: #10b981; }
         
-        .btn-pulse {
-            animation: pulse 1.5s infinite;
-        }
+        .btn-pulse { animation: pulse 1.5s infinite; }
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
             70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
             100% { transform: scale(1); }
         }
 
+        /* Container do Vídeo */
         .vsl-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -33,147 +34,118 @@
         .vsl-container iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
+            z-index: 1;
         }
 
-        .top-bar {
-            background: linear-gradient(90deg, #b91c1c 0%, #dc2626 100%);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* BOTÃO DE ATIVAR SOM (O Segredo) */
+        #unmute-button {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); /* Fundo escurecido para destacar o botão */
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            cursor: pointer; z-index: 10; /* Fica na frente do vídeo */
         }
+
+        .icon-pulse {
+            font-size: 60px;
+            animation: icon-bounce 1s infinite;
+        }
+        @keyframes icon-bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .top-bar { background: #b91c1c; font-size: 10px; text-transform: uppercase; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Barra de Alerta Urgência (Cor de Atenção Vermelha) -->
     <div class="top-bar py-2 text-center font-black text-white">
-        🔥 ALERTA: RESTAM APENAS 7 VAGAS COM O PREÇO PROMOCIONAL
+        ⚠️ ÚLTIMAS VAGAS COM DESCONTO DISPONÍVEIS
     </div>
 
     <div class="max-w-md mx-auto px-5 py-8">
         
-        <!-- Headline Principal -->
         <header class="text-center mb-6">
             <h1 class="text-2xl font-black leading-tight uppercase mb-4">
                 O GRANDE <span class="text-emerald text-3xl block italic">GOLPE DO SCORE:</span>
                 <span class="text-lg">Porque ser um bom pagador só te afasta de cartões premium</span>
             </h1>
-            <p class="text-gray-400 text-[11px] mb-2 font-bold uppercase tracking-widest text-emerald">🔊 O Vídeo já começou. Toque para ouvir.</p>
         </header>
 
-        <!-- VSL Vimeo (Autoplay, Mudo, Loop, Sem Controles) -->
+        <!-- ÁREA DO VÍDEO -->
         <div class="vsl-container mb-8 shadow-2xl shadow-emerald/20">
+            
+            <!-- Esse é o botão que libera o som -->
+            <div id="unmute-button" onclick="ativarSom()">
+                <div class="icon-pulse text-white">🔊</div>
+                <p class="text-white font-black text-lg uppercase mt-4 text-center px-4">
+                    Seu vídeo começou!<br>
+                    <span class="text-emerald">Clique aqui para ouvir</span>
+                </p>
+            </div>
+            
             <iframe 
+                id="vsl-video"
                 src="https://player.vimeo.com/video/1201274587?autoplay=1&muted=1&loop=1&autopause=0&controls=0&title=0&byline=0&portrait=0&playsinline=1" 
                 frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
+                allow="autoplay; fullscreen" 
                 allowfullscreen>
             </iframe>
         </div>
 
-        <!-- Botão Principal -->
-        <a href="#preco" class="btn-pulse bg-emerald block text-center text-black font-black py-5 rounded-2xl text-lg uppercase mb-4 tracking-tighter">
-            QUERO MEU ACESSO POR R$ 47
+        <!-- Botão de Compra -->
+        <a href="SEU_LINK_DE_CHECKOUT" class="btn-pulse bg-emerald block text-center text-black font-black py-5 rounded-2xl text-xl uppercase mb-8">
+            QUERO ACESSO POR R$ 47
         </a>
 
-        <p class="text-center text-[10px] text-gray-500 mb-12 uppercase font-bold italic underline decoration-emerald">🔥 147 pessoas estão assistindo agora</p>
+        <!-- Conteúdo dos Módulos -->
+        <section class="space-y-4 mb-16">
+            <div class="bg-card p-5 rounded-2xl border-l-4 border-emerald">
+                <h4 class="font-black text-emerald text-sm uppercase">Módulo 1</h4>
+                <p class="text-sm font-bold">A Caixa Preta do Sistema Bancário</p>
+            </div>
+            <div class="bg-card p-5 rounded-2xl border-l-4 border-emerald">
+                <h4 class="font-black text-emerald text-sm uppercase">Módulo 2</h4>
+                <p class="text-sm font-bold">O Fim dos 18 Mitos do Score</p>
+            </div>
+        </section>
 
-        <!-- CONTEÚDO DO MÉTODO -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-black text-center mb-8 uppercase italic tracking-tighter text-emerald">O Plano de Guerra:</h2>
+        <!-- Bônus -->
+        <section class="bg-emerald/5 border-2 border-dashed border-emerald/30 p-6 rounded-3xl mb-12">
+            <h2 class="text-center font-black text-lg text-emerald uppercase mb-6 italic">Você Ganha Hoje:</h2>
             <div class="space-y-4">
-                <div class="bg-card p-5 rounded-2xl border-l-4 border-emerald shadow-lg">
-                    <h4 class="font-black text-lg mb-1 uppercase">A Caixa Preta Bancária</h4>
-                    <p class="text-gray-400 text-[11px] leading-relaxed italic">Como os bancos usam o seu histórico secreto para negar crédito e como reverter isso hoje.</p>
-                </div>
-                <div class="bg-card p-5 rounded-2xl border-l-4 border-emerald shadow-emerald/5 shadow-md">
-                    <h4 class="font-black text-lg mb-1 uppercase">Plano de Ação 7 Dias</h4>
-                    <p class="text-gray-400 text-[11px] leading-relaxed italic">O passo a passo para forçar os bancos a liberarem limites altos no seu CPF.</p>
-                </div>
+                <p class="text-xs">✅ <strong>Bônus 1:</strong> Refinanciar dívidas sem pagar juros.</p>
+                <p class="text-xs">✅ <strong>Bônus 2:</strong> 6 Técnicas para financiar veículo sem bancos.</p>
             </div>
         </section>
 
-        <!-- SEÇÃO DE BÔNUS (ATUALIZADA) -->
-        <section class="bg-emerald/5 border-2 border-dashed border-emerald/30 p-6 rounded-3xl mb-16 relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-black font-black text-[10px] px-4 py-1 rounded-full uppercase tracking-widest shadow-lg">
-                PRESENTES LIBERADOS
-            </div>
-            <h2 class="text-xl font-black text-center mt-2 mb-8 uppercase italic">Você Ganha Hoje:</h2>
-            
-            <div class="space-y-6">
-                <!-- BÔNUS #1 -->
-                <div class="bg-black/50 p-5 rounded-xl border border-white/10 relative shadow-xl">
-                    <span class="absolute -top-2 right-2 bg-emerald text-black text-[9px] font-black px-2 py-0.5 rounded uppercase font-mono italic">GRÁTIS</span>
-                    <h4 class="text-emerald font-black text-sm uppercase mb-2 leading-tight">Bônus #1: O Guia Passo a Passo para Refinanciar suas Dívidas sem Pagar Juros</h4>
-                    <p class="text-[10px] text-gray-400 italic">Aprenda a quitar débitos com até 90% de desconto usando a estratégia da contraproposta agressiva.</p>
-                </div>
-
-                <!-- BÔNUS #2 (O QUE FALTAVA) -->
-                <div class="bg-black/50 p-5 rounded-xl border border-white/10 relative shadow-xl">
-                    <span class="absolute -top-2 right-2 bg-emerald text-black text-[9px] font-black px-2 py-0.5 rounded uppercase font-mono italic">GRÁTIS</span>
-                    <h4 class="text-emerald font-black text-sm uppercase mb-2 leading-tight">Bônus #2: 6 Técnicas para Financiar um Veículo sem Ajuda dos Bancos</h4>
-                    <p class="text-[10px] text-gray-400 italic font-medium">Saia do busão e conquiste seu carro ou moto sem depender das taxas abusivas e da aprovação chata dos grandes bancos.</p>
-                </div>
-            </div>
+        <!-- Preço e Garantia -->
+        <section class="text-center mb-10">
+            <span class="text-gray-500 line-through">R$ 97,00</span>
+            <div class="text-6xl font-black">R$ 47,00</div>
+            <img src="https://i.ibb.co/L9H8qfM/selo-garantia.png" class="mx-auto mt-6" width="60">
+            <p class="text-[10px] text-gray-500 mt-2">Garantia Blindada de 7 Dias</p>
         </section>
-
-        <!-- SEÇÃO DE PREÇO (ATUALIZADA R$ 47) -->
-        <section id="preco" class="text-center mb-16 bg-card py-12 rounded-[40px] border-2 border-emerald/30 shadow-2xl shadow-emerald/10">
-            <h2 class="text-[10px] font-black uppercase text-gray-500 mb-2 tracking-widest">Oferta Única e Exclusiva</h2>
-            <div class="mb-6">
-                <span class="text-gray-600 line-through text-lg italic font-bold">R$ 97,00</span>
-                <div class="text-7xl font-black text-white tracking-tighter">R$ 47,00</div>
-                <p class="text-emerald text-sm font-bold mt-1 uppercase tracking-tighter">ou 5x de R$ 10,11 no cartão</p>
-            </div>
-            <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-pulse bg-emerald inline-block w-72 text-black font-black py-6 rounded-2xl text-xl uppercase tracking-tighter">
-                QUERO MEU ACESSO AGORA
-            </a>
-            <div class="mt-8">
-                <img src="https://i.ibb.co/Vpk3pXQ/checkouts-safe.png" class="mx-auto opacity-30 grayscale" width="200">
-            </div>
-            <p class="mt-4 text-[10px] text-yellow-500 font-bold uppercase animate-pulse">⚠️ Restam apenas 7 cópias neste valor!</p>
-        </section>
-
-        <!-- FAQ -->
-        <section class="mb-16 px-2">
-            <h2 class="text-xl font-black text-center mb-8 uppercase italic">Dúvidas Frequentes:</h2>
-            <div class="space-y-3">
-                <details class="bg-card rounded-2xl p-5 group border border-white/5">
-                    <summary class="font-bold text-sm list-none flex justify-between items-center cursor-pointer">
-                        O Bônus de veículo realmente funciona?
-                        <span class="text-emerald group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-[11px] text-gray-400 mt-3 italic leading-relaxed">Sim! As 6 técnicas são voltadas para quem quer adquirir um veículo sem ficar refém dos juros e da burocracia dos bancos tradicionais.</p>
-                </details>
-                <details class="bg-card rounded-2xl p-5 group border border-emerald/10 shadow-lg">
-                    <summary class="font-bold text-sm list-none flex justify-between items-center cursor-pointer text-emerald uppercase">
-                        Tem Garantia?
-                        <span class="text-emerald group-open:rotate-180 transition-transform text-white">▼</span>
-                    </summary>
-                    <p class="text-[11px] text-gray-400 mt-3 italic leading-relaxed font-bold">Risco Zero: Você tem 7 dias. Se não gostar ou não ver resultado, devolvemos seu dinheiro na hora via PIX.</p>
-                </details>
-            </div>
-        </section>
-
-        <!-- Garantia -->
-        <section class="text-center mb-20 px-4 bg-white/5 py-10 rounded-3xl border border-white/5 shadow-2xl shadow-emerald/5">
-            <img src="https://i.ibb.co/L9H8qfM/selo-garantia.png" class="mx-auto mb-4" width="80">
-            <h3 class="font-black uppercase mb-2 text-sm italic">Garantia Blindada</h3>
-            <p class="text-gray-500 text-[10px] leading-relaxed uppercase font-bold max-w-xs mx-auto">Você tem 7 dias para testar tudo. Se o seu score não aumentar ou o material não te ajudar, o prejuízo é meu.</p>
-        </section>
-
-        <!-- Rodapé Legal -->
-        <footer class="text-[8px] text-gray-700 text-center leading-tight space-y-4 pb-10">
-            <p>Este site não é afiliado ao Facebook, Google ou Serasa. Todos os direitos reservados.</p>
-            <div class="flex justify-center gap-4 underline opacity-50 uppercase font-bold">
-                <a href="#">Termos</a>
-                <a href="#">Privacidade</a>
-            </div>
-            <p>© 2026 Código do Crédito Oficial</p>
-        </footer>
 
     </div>
+
+    <!-- SCRIPT PARA LIBERAR O SOM -->
+    <script>
+        // Conecta com o player do Vimeo
+        var iframe = document.querySelector('#vsl-video');
+        var player = new Vimeo.Player(iframe);
+
+        // Função que é chamada quando clica no botão do vídeo
+        function ativarSom() {
+            player.setMuted(false); // Tira o mudo
+            player.setVolume(1);    // Coloca volume no máximo
+            document.getElementById('unmute-button').style.display = 'none'; // Some com o botão
+        }
+    </script>
+
 </body>
 </html>
+                    
                     
