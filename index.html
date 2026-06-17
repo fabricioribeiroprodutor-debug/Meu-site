@@ -63,155 +63,127 @@
 
         .top-bar { background: #b91c1c; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* FORÇAR FAQ 100% BRANCO */
-        summary { color: #ffffff !important; }
+        /* GARANTIR QUE TUDO NO FAQ SEJA BRANCO */
+        details summary { color: #ffffff !important; list-none: none; }
         details p { color: #ffffff !important; }
-        details span { color: #ffffff !important; }
+        summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="antialiased text-left text-white">
 
-    <!-- BARRA DE ESCASSEZ -->
-    <div class="top-bar py-2 text-center font-black text-white text-center">
+    <div class="top-bar py-2 text-center font-black text-white">
         ⚠️ ATENÇÃO: ÚLTIMAS VAGAS DISPONÍVEIS COM O PREÇO PROMOCIONAL
     </div>
 
-    <div class="max-w-md mx-auto px-5 py-8 text-left">
+    <div class="max-w-md mx-auto px-5 py-8">
         
         <header class="text-center mb-6">
-            <h1 class="text-2xl font-black leading-tight uppercase mb-4 px-2 text-white">
+            <h1 class="text-2xl font-black leading-tight uppercase mb-4 text-white">
                 O GRANDE <span class="text-emerald text-3xl block italic text-center">GOLPE DO SCORE:</span>
                 <span class="text-lg">Porque ser um bom pagador só te afasta de cartões premium</span>
             </h1>
         </header>
 
-        <!-- VSL -->
         <div class="vsl-container mb-8 shadow-2xl shadow-emerald/20 border-emerald">
             <div id="unmute-overlay" onclick="enableSound()">
-                <div class="text-5xl mb-4 animate-bounce text-white">🔊</div>
+                <div class="text-5xl mb-4 animate-bounce">🔊</div>
                 <p class="text-white font-black text-lg uppercase mt-2 text-center px-4 leading-tight">
                     O vídeo já começou!<br>
                     <span class="text-emerald text-xl font-black">Clique para ouvir</span>
                 </p>
             </div>
-            
-            <iframe 
-                id="vsl-player"
-                src="https://player.vimeo.com/video/1201274587?autoplay=1&muted=1&loop=1&autopause=0&controls=0&title=0&byline=0&portrait=0&playsinline=1" 
-                frameborder="0" 
-                allow="autoplay; fullscreen" 
-                allowfullscreen>
-            </iframe>
+            <iframe id="vsl-player" src="https://player.vimeo.com/video/1201274587?autoplay=1&muted=1&loop=1&autopause=0&controls=0&title=0&byline=0&portrait=0&playsinline=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
 
-        <!-- CTA 1 (Link Cakto) -->
-        <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald block text-center text-black font-black py-5 rounded-2xl text-lg uppercase mb-4 tracking-tighter shadow-lg shadow-emerald/40">
+        <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald block text-center text-black font-black py-5 rounded-2xl text-lg uppercase mb-4 tracking-tighter">
             FORÇAR LIBERAÇÃO DE CRÉDITO AGORA
         </a>
         
-        <!-- CONTADOR DINÂMICO -->
-        <p class="text-center text-[10px] text-gray-500 mb-12 font-bold uppercase italic text-center">
+        <p class="text-center text-[10px] text-gray-500 mb-12 font-bold uppercase italic text-center text-white">
             🔥 <span id="viewer-count" class="text-emerald">147</span> pessoas estão assistindo agora
         </p>
 
-        <!-- MÓDULOS -->
-        <section class="mb-20 text-left">
-            <h2 class="text-2xl font-black text-center mb-8 uppercase italic tracking-tighter text-emerald text-center">O Plano de Guerra:</h2>
+        <section class="mb-20">
+            <h2 class="text-2xl font-black text-center mb-8 uppercase italic tracking-tighter text-emerald">O Plano de Guerra:</h2>
             <div class="space-y-4">
                 <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl">
-                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter leading-none text-white italic">A Caixa Preta Bancária</h4>
+                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter text-white italic">A Caixa Preta Bancária</h4>
                     <p class="text-gray-400 text-xs italic leading-relaxed text-white">Descubra o que os bancos escondem no seu histórico secreto e como isso trava o seu Score hoje.</p>
                 </div>
-                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl text-left text-white">
-                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter leading-none text-white italic">Fim dos 18 Mitos</h4>
+                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl">
+                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter text-white italic">Fim dos 18 Mitos</h4>
                     <p class="text-gray-400 text-xs italic leading-relaxed text-white">Destrua as mentiras sobre o Serasa e aprenda o que realmente importa para ter limites altos.</p>
                 </div>
-                <!-- MÓDULO 3 BRANCO -->
-                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl text-left text-white">
-                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter leading-none text-white italic">Plano de Ativação Prático</h4>
+                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl">
+                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter text-white italic">Plano de Ativação Prático</h4>
                     <p class="text-gray-400 text-xs italic leading-relaxed text-white">O guia para organizar seu CPF e seguir o cronograma necessário para a melhora da sua pontuação bancária.</p>
                 </div>
             </div>
         </section>
 
-        <!-- BÔNUS COM PREÇO RISCADO -->
-        <section class="mb-20 text-white">
-            <h2 class="text-3xl font-black text-center mb-8 uppercase italic text-white text-center">Ganhando HOJE:</h2>
+        <section class="mb-20">
+            <h2 class="text-3xl font-black text-center mb-8 uppercase italic text-white">Ganhando HOJE:</h2>
             <div class="space-y-6">
-                
-                <div class="bonus-card p-6 rounded-[32px] text-white">
+                <div class="bonus-card p-6 rounded-[32px]">
                     <div class="bonus-badge italic">Grátis Hoje</div>
-                    <div class="flex gap-4 items-start text-left">
+                    <div class="flex gap-4 items-start">
                         <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-3xl">📄</div>
-                        <div class="flex-1 text-white">
-                            <h4 class="text-emerald font-black text-sm uppercase leading-tight mb-1 italic">Bônus #1: Refinanciar Dívidas sem Juros</h4>
-                            <p class="text-[10px] text-gray-400 italic mb-2">Quite débitos com até 90% de desconto usando a estratégia da contraproposta agressiva.</p>
-                            <p class="text-xs font-bold text-white">
-                                <span class="text-gray-500 line-through mr-1 font-normal italic">De R$ 97,00</span> 
-                                <span class="text-emerald font-black uppercase">POR R$ 0,00</span>
-                            </p>
+                        <div class="flex-1">
+                            <h4 class="text-emerald font-black text-sm uppercase mb-1 italic">Bônus #1: Refinanciar Dívidas sem Juros</h4>
+                            <p class="text-[10px] text-gray-400 italic mb-2 text-white">Quite débitos com até 90% de desconto usando a estratégia da contraproposta agressiva.</p>
+                            <p class="text-xs font-bold text-white"><s>De R$ 97,00</s> <span class="text-emerald">POR R$ 0,00</span></p>
                         </div>
                     </div>
                 </div>
-
-                <div class="bonus-card p-6 rounded-[32px] text-left text-white">
+                <div class="bonus-card p-6 rounded-[32px]">
                     <div class="bonus-badge italic">Grátis Hoje</div>
-                    <div class="flex gap-4 items-start text-left">
+                    <div class="flex gap-4 items-start">
                         <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-3xl text-white">🚗</div>
-                        <div class="flex-1 text-left text-white">
-                            <h4 class="text-emerald font-black text-sm uppercase leading-tight mb-1 italic">Bônus #2: Financiar Veículo sem Bancos</h4>
+                        <div class="flex-1">
+                            <h4 class="text-emerald font-black text-sm uppercase mb-1 italic">Bônus #2: Financiar Veículo sem Bancos</h4>
                             <p class="text-[10px] text-gray-400 italic mb-2 text-white">Conquiste seu carro ou moto sem depender das taxas abusivas das grandes instituições.</p>
-                            <p class="text-xs font-bold text-left text-white">
-                                <span class="text-gray-500 line-through mr-1 font-normal italic">De R$ 147,00</span> 
-                                <span class="text-emerald font-black uppercase">POR R$ 0,00</span>
-                            </p>
+                            <p class="text-xs font-bold text-white"><s>De R$ 147,00</s> <span class="text-emerald">POR R$ 0,00</span></p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- PREÇO R$ 47 -->
-        <section id="preco" class="text-center mb-16 bg-card py-14 rounded-[48px] border-2 border-emerald/30 relative text-center">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black font-black text-[9px] px-6 py-2 rounded-full uppercase italic">Oferta por Tempo Limitado</div>
+        <section id="preco" class="text-center mb-16 bg-card py-14 rounded-[48px] border-2 border-emerald/30 relative">
             <div class="mb-6">
-                <span class="text-gray-600 line-through text-lg italic font-bold">De R$ 97,00 por</span>
-                <div class="text-7xl font-black text-white tracking-tighter leading-none">R$ 47,00</div>
-                <p class="text-emerald text-sm font-bold mt-2 uppercase tracking-tighter italic">ou 5x de R$ 10,11 no cartão</p>
+                <span class="text-gray-600 line-through text-lg font-bold">De R$ 97,00 por</span>
+                <div class="text-7xl font-black text-white leading-none">R$ 47,00</div>
+                <p class="text-emerald text-sm font-bold mt-2 uppercase italic text-white">ou 5x de R$ 10,11 no cartão</p>
             </div>
-            
-            <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald inline-block w-72 text-black font-black py-6 rounded-2xl text-xl uppercase tracking-tighter shadow-lg shadow-emerald/20">
-                FORÇAR LIBERAÇÃO DE CRÉDITO AGORA
-            </a>
-            
-            <div class="mt-8 opacity-40 grayscale flex justify-center gap-4 items-center">
-                <img src="https://img.icons8.com/color/48/visa.png" width="30">
-                <img src="https://img.icons8.com/color/48/mastercard.png" width="30">
-                <img src="https://img.icons8.com/color/48/pix.png" width="30">
+            <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald inline-block w-72 text-black font-black py-6 rounded-2xl text-xl uppercase tracking-tighter">FORÇAR LIBERAÇÃO AGORA</a>
+            <div class="mt-8 flex justify-center gap-4 opacity-40 grayscale"><img src="https://img.icons8.com/color/48/visa.png" width="30"><img src="https://img.icons8.com/color/48/mastercard.png" width="30"><img src="https://img.icons8.com/color/48/pix.png" width="30"></div>
+            <div class="mt-6 flex flex-col items-center">
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="#151515" stroke="#D4AF37" stroke-width="2"/><text x="50" y="55" font-family="Arial" font-size="28" font-weight="900" fill="#D4AF37" text-anchor="middle">7</text><text x="50" y="75" font-family="Arial" font-size="9" font-weight="bold" fill="#D4AF37" text-anchor="middle">DIAS DE GARANTIA</text></svg>
+                <span class="text-[10px] font-black uppercase text-gray-400 mt-2">Garantia Blindada</span>
             </div>
-
-            <!-- GARANTIA SVG -->
-            <div class="mt-6 flex flex-col items-center justify-center">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" fill="#151515" stroke="#D4AF37" stroke-width="2"/>
-                    <circle cx="50" cy="50" r="38" stroke="#D4AF37" stroke-width="1" stroke-dasharray="2 2"/>
-                    <text x="50" y="55" font-family="Arial" font-size="28" font-weight="900" fill="#D4AF37" text-anchor="middle">7</text>
-                    <text x="50" y="72" font-family="Arial" font-size="9" font-weight="bold" fill="#D4AF37" text-anchor="middle">DIAS DE</text>
-                    <text x="50" y="82" font-family="Arial" font-size="9" font-weight="bold" fill="#D4AF37" text-anchor="middle">GARANTIA</text>
-                </svg>
-                <span class="text-[10px] font-black uppercase text-gray-400 tracking-widest mt-2">Garantia Blindada de 7 Dias</span>
-            </div>
-
-            <p class="mt-6 text-[10px] text-yellow-500 font-bold uppercase animate-pulse italic leading-none text-center">⚠️ Atenção: Restam apenas 7 cópias neste valor!</p>
         </section>
 
-        <!-- FAQ (AGORA COM AS 6 PERGUNTAS COMPLETAS E BRANCAS) -->
-        <section class="mb-20 px-2 text-left text-white">
-            <h2 class="text-3xl font-black text-center mb-8 uppercase italic text-white text-center">Dúvidas Frequentes:</h2>
+        <!-- FAQ COM AS 6 PERGUNTAS COMPLETAS -->
+        <section class="mb-20 px-2 text-left">
+            <h2 class="text-3xl font-black text-center mb-8 uppercase italic text-white">Dúvidas Frequentes:</h2>
             <div class="space-y-4">
-                
-                <details class="bg-card rounded-2xl p-6 group border border-white/5">
-                    <summary class="font-bold text-sm list-none flex justify-between items-center cursor-pointer text-white">
-                        Vou receber os bônus agora?
-                        <span class="text-white group-open:rotate-180 transition-transform text-white">▼</s
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Vou receber os bônus agora? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Sim! Tudo é liberado no seu e-mail imediatamente após o pagamento.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Funciona para negativados? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Sim! O método foca em reconstruir sua imagem perante os bancos.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Em quanto tempo vejo resultados? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Seguindo o plano, a melhora na pontuação costuma ser rápida.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Preciso de um computador? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Não! Você pode aplicar tudo 100% pelo seu celular.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">O pagamento é seguro? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Totalmente! Seus dados são protegidos por criptografia de ponta.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Tem Garantia? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3 font-bold">Risco Zero: Devolvemos seu dinheiro se não gostar em 7 dias.</p></details>
+            </div>
+        </section>
+
+        <footer class="text-[8px] text-center leading-tight space-y-4 pb-12 opacity-60 italic text-white"><p>Este site não é afiliado ao Facebook ou Google. © 2026 Código do Crédito Oficial</p></footer>
+    </div>
+
+    <script>
+        var iframe = document.querySelector('#vsl-player'); var player = new Vimeo.Player(iframe);
+        function enableSound() { player.setMuted(false); player.setVolume(1); document.getElementById('unmute-overlay').style.display = 'none'; }
+        function updateViewers() { const viewerElement = document.getElementById('viewer-count'); let currentViewers = parseInt(viewerElement.innerText); let fluctuation = Math.floor(Math.random() * 3) - 1; let newValue = currentViewers + fluctuation; if (newValue < 138) newValue = 140; if (newValue > 157) newValue = 155; viewerElement.innerText = newValue; }
+        setInterval(updateViewers, 3000);
+    </script>
+</body>
+</html>
