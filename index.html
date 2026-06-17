@@ -3,28 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código do Crédito | Limite Alto</title>
+    <title>O Grande Golpe do Score</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-green: #10b981;
-            --gold: #fbbf24;
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: white; }
+        .bg-card { background-color: #111111; border: 1px solid #222222; }
+        .text-emerald { color: #10b981; }
+        .bg-emerald { background-color: #10b981; }
+        .border-emerald { border-color: #065f46; }
+        
+        /* Efeito de pulsar no botão */
+        .btn-pulse {
+            animation: pulse 2s infinite;
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #030712;
-            color: white;
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); }
+        }
+
+        /* Vídeo Responsivo */
+        .vsl-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #111;
+        }
+        .vsl-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
         }
     </style>
 </head>
-<body>
-    <div class="flex flex-col items-center justify-center min-h-screen p-4 text-center">
-        <h1 class="text-4xl font-bold text-emerald-500 mb-4">Código do Crédito</h1>
-        <p class="text-xl mb-8">Aumente seu limite e sua pontuação de score.</p>
-        <button class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-            QUERO MEU LIMITE ALTO
-        </button>
+<body class="antialiased">
+
+    <div class="max-w-md mx-auto px-5 py-10">
+        
+        <!-- HEADLINE -->
+        <section class="text-center mb-8">
+            <h2 class="text-xl font-bold mb-4">O Grande Golpe do Score:</h2>
+            <h1 class="text-2xl md:text-3xl font-extrabold text-emerald leading-tight mb-6">
+                Por Que Ser um Bom Pagador Só Te Deixa Mais Longe de Conseguir Cartões Premium
+            </h1>
+            <p class="text-lg font-semibold text-gray-300">E o que fazer hoje para mudar isso.</p>
+        </section>
+
+        <p class="text-center text-gray-400 text-sm mb-6">Assista antes que o sistema descubra este link e tire o vídeo do ar.</p>
+
+        <!-- VSL (VIMEO) -->
+        <div class="vsl-container mb-8 shadow-2xl shadow-emerald/20">
+            <iframe src="https://player.vimeo.com/video/1201274587?badge=0&autopause=0&player_id=0&app_id=58479" 
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="VSL"></iframe>
+        </div>
+
+        <!-- BOTÃO CTA 1 -->
+        <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-pulse bg-emerald w-full block text-center text-black font-black py-5 rounded-xl text-lg uppercase tracking-tighter mb-4">
+            FORÇAR LIBERAÇÃO DE CRÉDITO AGORA
+        </a>
+
+        <!-- AVISO PREÇO -->
+        <div class="bg-card border-l-4 border-yellow-500 p-4 rounded-r-lg mb-4 text-sm text-yellow-200">
+            <strong>⚠️ Aviso:</strong> o preço promocional atual pode subir a qualquer momento devido à alta demanda.
+        </div>
+        <p class="text-center text-xs text-gray-500 mb-12">Pagamento 100% seguro · Acesso imediato após a compra</p>
+
+        <!-- O QUE VOCÊ VAI RECEBER -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-extrabold text-center mb-2">O Que Você Vai Receber</h2>
+            <p class="text-center text-gray-400 mb-8">Tudo o que você precisa para sair do zero e conquistar resultados reais.</p>
+
+            <!-- Módulos -->
+            <div class="space-y-4">
+                <div class="bg-card p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-emerald/10 p-3 rounded-lg text-emerald">🚀</div>
+                    <div>
+                        <h3 class="font-bold text-lg leading-tight">Módulo 1 — Fundamentos Essenciais</h3>
+                        <p class="text-gray-400 text-sm mt-1">A base estratégica para começar do zero com clareza e direção.</p>
+                    </div>
+                </div>
+                <div class="bg-card p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-emerald/10 p-3 rounded-lg text-emerald">🧠</div>
+                    <div>
+                        <h3 class="font-bold text-lg leading-tight">Módulo 2 — Método Passo a Passo</h3>
+                        <p class="text-gray-400 text-sm mt-1">O processo completo aplicado por quem já fatura todos os dias.</p>
+                    </div>
+                </div>
+                <div class="bg-card p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-emerald/10 p-3 rounded-lg text-emerald">🎯</div>
+                    <div>
+                        <h3 class="font-bold text-lg leading-tight">Módulo 3 — Execução de Alta Performance</h3>
+                        <p class="text-gray-400 text-sm mt-1">Como aplicar tudo na prática e obter resultados em tempo recorde.</p>
+                    </div>
+                </div>
+                <div class="bg-card p-6 rounded-2xl flex items-start gap-4">
+                    <div class="bg-emerald/10 p-3 rounded-lg text-emerald">🏆</div>
+                    <div>
+                        <h3 class="font-bold text-lg leading-tight">Módulo 4 — Escala e Resultados</h3>
+                        <p class="text-gray-400 text-sm mt-1">Estratégias avançadas para multiplicar seus ganhos de forma sustentável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BÔNUS -->
+        <section class="bg-card border-2 border-emerald p-6 rounded-3xl mb-12 relative overflow-hidden">
+            <div class="flex justify-center mb-4 text-emerald">🎁 BÔNUS EXCLUSIVOS</div>
+            <h2 class="text-2xl font-black text-center mb-6">Bônus exclusivos inclusos <span class="text-emerald">apenas hoje</span></h2>
+            
+            <div class="space-y-4">
+                <div class="bg-black/40 p-5 rounded-2xl relative border border-white/5">
+                    <span class="absolute top-2 right-2 bg-emerald text-[10px] text-black font-bold px-2 py-0.5 rounded-full">100% GRÁTIS</span>
+                    <h4 class="font-bold">Bônus #1 — Templates Prontos</h4>
+                    <p class="text-xs text-gray-400 mt-1">Modelos editáveis para acelerar sua execução desde o primeiro dia.</p>
+                </div>
+                <div class="bg-black/40 p-5 rounded-2xl relative border border-white/5">
+                    <span class="absolute top-2 right-2 bg-emerald text-[10px] text-black font-bold px-2 py-0.5 rounded-full">100% GRÁTIS</span>
+                    <h4 class="font-bold">Bônus #2 — Comunidade VIP</h4>
+                    <p class="text-xs text-gray-400 mt-1">Acesso ao grupo exclusivo de alunos e suporte direto da equipe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GARANTIA -->
+        <section class="text-center mb-16 bg-card p-8 rounded-3xl">
+            <div class="inline-block bg-emerald/20 p-4 rounded-full mb-4">
+                <svg class="w-12 h-12 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold mb-2 text-white">Garantia Incondicional de 7 Dias</h2>
+            <p class="text-gray-400 text-sm leading-relaxed">Risco Zero. Se você não gostar do conteúdo, devolvemos 100% do seu dinheiro sem perguntas.</p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-extrabold text-center mb-8">Perguntas Frequentes</h2>
+            <div class="space-y-3">
+                <details class="bg-card rounded-xl overflow-hidden group">
+                    <summary class="p-5 font-bold cursor-pointer flex justify-between items-center list-none text-emerald">
+                        Como recebo o acesso?
+                        <span class="group-open:rotate-180 transition-transform text-white">▼</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-400 text-sm">
+                        Imediatamente após a confirmação do pagamento, você recebe um e-mail com seus dados de acesso à plataforma.
+                    </div>
+                </details>
+                <details class="bg-card rounded-xl overflow-hidden group">
+                    <summary class="p-5 font-bold cursor-pointer flex justify-between items-center list-none">
+                        Serve para iniciantes?
+                        <span class="group-open:rotate-180 transition-transform text-white">▼</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-400 text-sm">Sim! O método foi desenhado para quem está começando do absoluto zero.</div>
+                </details>
+                <details class="bg-card rounded-xl overflow-hidden group">
+                    <summary class="p-5 font-bold cursor-pointer flex justify-between items-center list-none">
+                        Por quanto tempo terei acesso?
+                        <span class="group-open:rotate-180 transition-transform text-white">▼</span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-400 text-sm">O acesso é vitalício/anual conforme o plano escolhido.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- BOTÃO FINAL -->
+        <a href="SEU_LINK_DE_CHECKOUT_AQUI" class="btn-pulse bg-emerald w-full block text-center text-black font-black py-5 rounded-xl text-lg uppercase mb-4">
+            FORÇAR LIBERAÇÃO DE CRÉDITO AGORA
+        </a>
+        
+        <div class="bg-card border-l-4 border-yellow-500 p-4 rounded-r-lg mb-8 text-sm text-yellow-200">
+            <strong>⚠️ Aviso:</strong> o preço promocional atual pode subir a qualquer momento devido à alta demanda.
+        </div>
+
     </div>
+
 </body>
 </html>
