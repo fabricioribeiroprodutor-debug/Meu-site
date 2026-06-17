@@ -20,91 +20,29 @@
             100% { transform: scale(1); }
         }
 
-        .vsl-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid #10b981;
-            background: #000;
-        }
-        .vsl-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
+        .vsl-container { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 15px; overflow: hidden; border: 2px solid #10b981; background: #000; }
+        .vsl-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        #unmute-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            cursor: pointer; z-index: 10;
-        }
-
-        .bonus-card {
-            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .bonus-badge {
-            background: #10b981;
-            color: #000;
-            font-weight: 900;
-            font-size: 10px;
-            padding: 4px 12px;
-            border-radius: 0 0 0 12px;
-            position: absolute;
-            top: 0; right: 0;
-            text-transform: uppercase;
-        }
+        #unmute-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; z-index: 10; }
+        
+        .bonus-card { background: linear-gradient(145deg, #0f0f0f, #1a1a1a); border: 1px solid rgba(16, 185, 129, 0.2); position: relative; overflow: hidden; }
+        .bonus-badge { background: #10b981; color: #000; font-weight: 900; font-size: 10px; padding: 4px 12px; border-radius: 0 0 0 12px; position: absolute; top: 0; right: 0; text-transform: uppercase; }
 
         .top-bar { background: #b91c1c; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* NOTIFICAÇÃO DE VENDA */
-        #sales-notification {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #111;
-            border: 1px solid #10b981;
-            padding: 12px;
-            border-radius: 12px;
-            display: none;
-            z-index: 100;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            max-width: 250px;
-            animation: fadeInUp 0.5s ease;
-        }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* FORÇAR FAQ BRANCO */
-        summary { color: #ffffff !important; list-none: none; }
+        /* CSS PARA GARANTIR FAQ 100% BRANCO */
+        summary { color: #ffffff !important; list-style: none; }
         details p { color: #ffffff !important; }
         summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="antialiased text-left text-white">
 
-    <!-- NOTIFICAÇÃO DE VENDA (POPUP) -->
-    <div id="sales-notification">
-        <div class="flex items-center gap-3">
-            <div class="bg-emerald rounded-full p-2 text-black text-xs font-black">✓</div>
-            <div>
-                <p id="notif-text" class="text-[10px] text-white leading-tight font-bold">Fulano de São Paulo acabou de ativar o código.</p>
-                <p class="text-[8px] text-emerald font-black mt-1 uppercase italic">Confirmado há 2 minutos</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- BARRA DE ESCASSEZ -->
     <div class="top-bar py-2 text-center font-black text-white">
-        ⚠️ ATENÇÃO: PROTOCOLO 2026 LIBERADO - ÚLTIMAS 7 VAGAS
+        ⚠️ ATENÇÃO: ÚLTIMAS VAGAS DISPONÍVEIS COM O PREÇO PROMOCIONAL
     </div>
 
-    <div class="max-w-md mx-auto px-5 py-8">
+    <div class="max-w-md mx-auto px-5 py-8 text-left">
         
         <header class="text-center mb-6">
             <h1 class="text-2xl font-black leading-tight uppercase mb-4 px-2 text-white">
@@ -113,41 +51,62 @@
             </h1>
         </header>
 
-        <!-- VSL -->
         <div class="vsl-container mb-8 shadow-2xl shadow-emerald/20 border-emerald">
             <div id="unmute-overlay" onclick="enableSound()">
-                <div class="text-5xl mb-4 animate-bounce text-white">🔊</div>
-                <p class="text-white font-black text-lg uppercase mt-2 text-center px-4 leading-tight">
-                    O vídeo já começou!<br>
-                    <span class="text-emerald text-xl font-black">Clique para ouvir</span>
-                </p>
+                <div class="text-5xl mb-4 animate-bounce">🔊</div>
+                <p class="text-white font-black text-lg uppercase mt-2 text-center px-4 leading-tight">O vídeo já começou!<br><span class="text-emerald text-xl font-black">Clique para ouvir</span></p>
             </div>
             <iframe id="vsl-player" src="https://player.vimeo.com/video/1201274587?autoplay=1&muted=1&loop=1&autopause=0&controls=0&title=0&byline=0&portrait=0&playsinline=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
 
-        <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald block text-center text-black font-black py-5 rounded-2xl text-lg uppercase mb-4 tracking-tighter">
-            FORÇAR LIBERAÇÃO DE CRÉDITO AGORA
+        <!-- BOTÃO COMEÇAR AGORA -->
+        <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald block text-center text-black font-black py-5 rounded-2xl text-xl uppercase mb-4 tracking-tighter">
+            COMEÇAR AGORA
         </a>
         
-        <p class="text-center text-[10px] text-gray-500 mb-12 font-bold uppercase italic text-center text-white">
+        <p class="text-center text-[10px] text-gray-500 mb-12 font-bold uppercase italic text-center">
             🔥 <span id="viewer-count" class="text-emerald">147</span> pessoas estão assistindo agora
         </p>
 
+        <!-- QUALIFICAÇÃO -->
+        <section class="mb-20 space-y-6">
+            <div class="bg-card p-6 rounded-[32px] border border-emerald/20">
+                <h2 class="text-emerald font-black text-lg uppercase italic mb-4">🎯 Ideal para quem:</h2>
+                <ul class="space-y-3 text-sm text-white">
+                    <li class="flex gap-2">✅ Está negativado ou já esteve.</li>
+                    <li class="flex gap-2">✅ Quer voltar a ter acesso a crédito.</li>
+                    <li class="flex gap-2">✅ Busca aumentar score com estratégias reais.</li>
+                    <li class="flex gap-2">✅ Quer renegociar dívidas pagando menos.</li>
+                    <li class="flex gap-2">✅ Deseja financiar um veículo ou imóvel.</li>
+                </ul>
+            </div>
+
+            <div class="bg-card p-6 rounded-[32px] border border-red-900/30">
+                <h2 class="text-red-500 font-black text-lg uppercase italic mb-4">❌ Este método NÃO é:</h2>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li class="flex gap-2">❌ Hack para enganar bancos ou sistemas.</li>
+                    <li class="flex gap-2">❌ Promessa de cartão aprovado sem análise.</li>
+                    <li class="flex gap-2">❌ Garantia de crédito instantâneo sem esforço.</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- MÓDULOS -->
         <section class="mb-20">
-            <h2 class="text-2xl font-black text-center mb-8 uppercase italic tracking-tighter text-emerald">O Plano de Guerra:</h2>
+            <h2 class="text-2xl font-black text-center mb-8 uppercase italic text-emerald">O Plano de Guerra:</h2>
             <div class="space-y-4">
-                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl">
-                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter text-white italic">A Caixa Preta Bancária</h4>
-                    <p class="text-gray-400 text-xs italic leading-relaxed text-white">Descubra o que os bancos escondem no seu histórico secreto e como isso trava o seu Score hoje.</p>
+                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald">
+                    <h4 class="font-black text-lg mb-1 uppercase text-white italic">A Caixa Preta Bancária</h4>
+                    <p class="text-gray-400 text-xs italic leading-relaxed text-white">O que os bancos escondem de você no seu histórico secreto.</p>
                 </div>
-                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl">
-                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter text-white italic">Fim dos 18 Mitos</h4>
-                    <p class="text-gray-400 text-xs italic leading-relaxed text-white">Destrua as mentiras sobre o Serasa e aprenda o que realmente importa para ter limites altos.</p>
+                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald">
+                    <h4 class="font-black text-lg mb-1 uppercase text-white italic">Fim dos 18 Mitos</h4>
+                    <p class="text-gray-400 text-xs italic leading-relaxed text-white">Destrua as mentiras que te contaram sobre o Serasa.</p>
                 </div>
-                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald shadow-xl">
-                    <h4 class="font-black text-lg mb-1 uppercase tracking-tighter text-white italic">Plano de Ativação Prático</h4>
-                    <p class="text-gray-400 text-xs italic leading-relaxed text-white">O guia para organizar seu CPF e seguir o cronograma necessário para a melhora da sua pontuação bancária.</p>
+                <!-- MÓDULO 3 BRANCO -->
+                <div class="bg-card p-6 rounded-3xl border-l-4 border-emerald">
+                    <h4 class="font-black text-lg mb-1 uppercase text-white italic">Plano de Ativação Prático</h4>
+                    <p class="text-gray-400 text-xs italic leading-relaxed text-white">O guia para organizar seu CPF e seguir o cronograma necessário.</p>
                 </div>
             </div>
         </section>
@@ -162,19 +121,19 @@
                         <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-3xl">📄</div>
                         <div class="flex-1">
                             <h4 class="text-emerald font-black text-sm uppercase leading-tight mb-1 italic">Bônus #1: Refinanciar Dívidas sem Juros</h4>
-                            <p class="text-[10px] text-gray-400 italic mb-2 text-white">Quite débitos com até 90% de desconto usando a estratégia da contraproposta agressiva.</p>
-                            <p class="text-xs font-bold text-white"><s>De R$ 97,00</s> <span class="text-emerald">POR R$ 0,00</span></p>
+                            <p class="text-[10px] text-gray-400 italic mb-2">Quite débitos com até 90% de desconto real.</p>
+                            <p class="text-xs font-bold text-white italic"><s>De R$ 97,00</s> <span class="text-emerald uppercase font-black">POR R$ 0,00</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="bonus-card p-6 rounded-[32px]">
                     <div class="bonus-badge italic">Grátis Hoje</div>
-                    <div class="flex gap-4 items-start">
-                        <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-3xl text-white">🚗</div>
+                    <div class="flex gap-4 items-start text-white">
+                        <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-3xl">🚗</div>
                         <div class="flex-1">
                             <h4 class="text-emerald font-black text-sm uppercase leading-tight mb-1 italic">Bônus #2: Financiar Veículo sem Bancos</h4>
-                            <p class="text-[10px] text-gray-400 italic mb-2 text-white">Conquiste seu carro ou moto sem depender das taxas abusivas das grandes instituições.</p>
-                            <p class="text-xs font-bold text-white"><s>De R$ 147,00</s> <span class="text-emerald">POR R$ 0,00</span></p>
+                            <p class="text-[10px] text-gray-400 italic mb-2">6 técnicas para conquistar seu carro ou moto.</p>
+                            <p class="text-xs font-bold text-white italic"><s>De R$ 147,00</s> <span class="text-emerald uppercase font-black">POR R$ 0,00</span></p>
                         </div>
                     </div>
                 </div>
@@ -182,63 +141,43 @@
         </section>
 
         <!-- PREÇO R$ 47 -->
-        <section id="preco" class="text-center mb-16 bg-card py-14 rounded-[48px] border-2 border-emerald/30 relative">
+        <section id="preco" class="text-center mb-16 bg-card py-14 rounded-[48px] border-2 border-emerald/30 relative text-center">
             <div class="mb-6">
-                <span class="text-gray-500 line-through text-lg font-bold italic">De R$ 97,00 por apenas</span>
+                <span class="text-gray-600 line-through text-lg italic font-bold">De R$ 97,00 por</span>
                 <div class="text-7xl font-black text-white leading-none">R$ 47,00</div>
-                <p class="text-emerald text-sm font-bold mt-2 uppercase italic text-white leading-none">Aprovação imediata no cartão ou PIX</p>
+                <p class="text-emerald text-sm font-bold mt-2 uppercase italic text-center">ou 5x de R$ 10,11 no cartão</p>
             </div>
-            <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald inline-block w-72 text-black font-black py-6 rounded-2xl text-xl uppercase tracking-tighter shadow-lg shadow-emerald/20">FORÇAR LIBERAÇÃO AGORA</a>
+            <a href="https://pay.cakto.com.br/3bq9pbr_862700" class="btn-pulse bg-emerald inline-block w-72 text-black font-black py-6 rounded-2xl text-xl uppercase tracking-tighter shadow-lg shadow-emerald/20">COMEÇAR AGORA</a>
             
             <div class="mt-8 flex justify-center gap-4 opacity-40 grayscale"><img src="https://img.icons8.com/color/48/visa.png" width="30"><img src="https://img.icons8.com/color/48/mastercard.png" width="30"><img src="https://img.icons8.com/color/48/pix.png" width="30"></div>
             
-            <!-- SELO DE GARANTIA -->
             <div class="mt-6 flex flex-col items-center">
-                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="#151515" stroke="#D4AF37" stroke-width="2"/><text x="50" y="55" font-family="Arial" font-size="28" font-weight="900" fill="#D4AF37" text-anchor="middle">7</text><text x="50" y="75" font-family="Arial" font-size="9" font-weight="bold" fill="#D4AF37" text-anchor="middle">DIAS DE GARANTIA</text></svg>
-                <span class="text-[10px] font-black uppercase text-gray-400 mt-2">Satisfação Total ou Dinheiro de Volta</span>
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" fill="#151515" stroke="#D4AF37" stroke-width="2"/><text x="50" y="55" font-family="Arial" font-size="28" font-weight="900" fill="#D4AF37" text-anchor="middle">7</text><text x="50" y="75" font-family="Arial" font-size="9" font-weight="bold" fill="#D4AF37" text-anchor="middle">DIAS DE GARANTIA</text></svg>
+                <span class="text-[10px] font-black uppercase text-gray-400 mt-2">Garantia Blindada</span>
             </div>
         </section>
 
         <!-- FAQ COM AS 6 PERGUNTAS BRANCAS -->
         <section class="mb-20 px-2 text-left">
-            <h2 class="text-3xl font-black text-center mb-8 uppercase italic text-white text-center">Dúvidas Frequentes:</h2>
+            <h2 class="text-3xl font-black text-center mb-8 uppercase italic text-white">Dúvidas Frequentes:</h2>
             <div class="space-y-4">
                 <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Vou receber os bônus agora? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Sim! Tudo é liberado no seu e-mail imediatamente após o pagamento.</p></details>
-                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Funciona para negativados? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3 text-white">Sim! O método foca em reconstruir sua imagem perante os bancos.</p></details>
-                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Em quanto tempo vejo resultados? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Seguindo o plano prático, a melhora na pontuação bancária costuma ser rápida.</p></details>
-                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm list-none flex justify-between items-center cursor-pointer">Preciso de um computador? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Não! Você pode aplicar tudo 100% pelo seu celular.</p></details>
-                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm list-none flex justify-between items-center cursor-pointer">O pagamento é seguro? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Totalmente! Seus dados são protegidos por criptografia de ponta.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Funciona para negativados? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Sim! O método foca em reconstruir sua imagem perante os bancos.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Em quanto tempo vejo resultados? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Seguindo o plano prático, a melhora na pontuação costuma ser refletida em poucos dias.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Preciso de um computador? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Não! Todo o conteúdo foi otimizado para ser aplicado 100% pelo seu celular.</p></details>
+                <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">O pagamento é seguro? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3">Totalmente! Usamos criptografia de ponta para garantir a segurança dos seus dados.</p></details>
                 <details class="bg-card rounded-2xl p-6 border border-white/5"><summary class="font-bold text-sm flex justify-between items-center cursor-pointer">Tem Garantia? <span class="text-emerald">▼</span></summary><p class="text-[11px] mt-3 font-bold">Risco Zero: Devolvemos seu dinheiro se não gostar em 7 dias.</p></details>
             </div>
         </section>
 
-        <footer class="text-[8px] text-center leading-tight space-y-4 pb-12 opacity-60 italic text-white"><p>Este site não é afiliado ao Facebook ou Google. © 2026 Código do Crédito Oficial</p></footer>
+        <footer class="text-[8px] text-center leading-tight space-y-4 pb-12 opacity-60 italic text-white text-center text-center"><p>Este site não é afiliado ao Facebook ou Serasa. © 2026 Código do Crédito Oficial</p></footer>
     </div>
 
     <script>
         var iframe = document.querySelector('#vsl-player'); var player = new Vimeo.Player(iframe);
         function enableSound() { player.setMuted(false); player.setVolume(1); document.getElementById('unmute-overlay').style.display = 'none'; }
-        
-        // CONTADOR DE PESSOAS
         function updateViewers() { const viewerElement = document.getElementById('viewer-count'); let currentViewers = parseInt(viewerElement.innerText); let fluctuation = Math.floor(Math.random() * 3) - 1; let newValue = currentViewers + fluctuation; if (newValue < 138) newValue = 140; if (newValue > 157) newValue = 155; viewerElement.innerText = newValue; }
         setInterval(updateViewers, 3000);
-
-        // POPUP DE VENDAS SIMULADAS
-        const names = ["Ricardo", "Amanda", "José", "Bruna", "Carlos", "Fernanda", "Marcos", "Patrícia", "Luiz", "Sandra"];
-        const cities = ["São Paulo", "Rio de Janeiro", "Curitiba", "Belo Horizonte", "Salvador", "Fortaleza", "Goiânia"];
-        
-        function showNotification() {
-            const notif = document.getElementById('sales-notification');
-            const notifText = document.getElementById('notif-text');
-            const randomName = names[Math.floor(Math.random() * names.length)];
-            const randomCity = cities[Math.floor(Math.random() * cities.length)];
-            
-            notifText.innerHTML = `<strong>${randomName}</strong> de ${randomCity} acabou de ativar o código.`;
-            notif.style.display = 'block';
-            
-            setTimeout(() => { notif.style.display = 'none'; }, 5000);
-        }
-        setInterval(showNotification, 15000);
     </script>
 </body>
 </html>
